@@ -3,7 +3,7 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_DB: postgre
+      POSTGRES_DB: postgres
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
     ports:
