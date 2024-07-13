@@ -1,4 +1,4 @@
-package com.hank.blog.payload.request;
+package com.hank.blog.payloads.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

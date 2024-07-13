@@ -1,4 +1,4 @@
-package com.hank.blog.payload.response;
+package com.hank.blog.payloads.responses;
 
 import lombok.Getter;
 import lombok.Setter;

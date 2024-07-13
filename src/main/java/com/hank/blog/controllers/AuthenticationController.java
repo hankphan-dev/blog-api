@@ -1,13 +1,11 @@
-package com.hank.blog.controller;
+package com.hank.blog.controllers;
 
-import com.hank.blog.dto.UserDto;
-import com.hank.blog.entity.UserEntity;
-import com.hank.blog.payload.request.LoginRequest;
-import com.hank.blog.payload.response.LoginResponse;
-import com.hank.blog.service.UserService;
+import com.hank.blog.dtos.UserDto;
+import com.hank.blog.payloads.requests.LoginRequest;
+import com.hank.blog.payloads.responses.LoginResponse;
+import com.hank.blog.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.function.EntityResponse;
 
 @RestController
 @AllArgsConstructor

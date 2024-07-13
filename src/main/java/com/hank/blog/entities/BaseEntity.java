@@ -1,4 +1,4 @@
-package com.hank.blog.entity;
+package com.hank.blog.entities;
 
 import jakarta.persistence.Column;
 

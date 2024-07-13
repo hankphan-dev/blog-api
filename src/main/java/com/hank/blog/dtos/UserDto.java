@@ -1,4 +1,4 @@
-package com.hank.blog.dto;
+package com.hank.blog.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
