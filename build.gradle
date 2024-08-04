@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.1'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'pmd'
+    id 'com.diffplug.spotless' version '6.0.4'
 }
 
 group = 'com.hank'
@@ -23,6 +25,7 @@ configurations {
 
 repositories {
     mavenCentral()
+//    gradlePluginPortal()
 }
 
 dependencies {
@@ -30,8 +33,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
     implementation 'org.modelmapper:modelmapper:3.1.1'
-
-
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -43,7 +44,30 @@ dependencies {
     // log dependencies
     implementation "org.springframework.boot:spring-boot-starter-log4j2"
     implementation platform("org.apache.logging.log4j:log4j-bom:2.19.0")
+
+    implementation('com.diffplug.spotless:spotless-plugin-gradle:6.22.0')
 }
+
+pmd {
+    ruleSets = []
+    ruleSetFiles = rootProject.files("rules/pmd.xml")
+}
+
+spotless {
+    java {
+//        googleJavaFormat('1.12.0')
+        importOrder()
+//        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+//spotless {
+//    java {
+//        googleJavaFormat()
+//    }
+//}
 
 tasks.named('test') {
     useJUnitPlatform()
